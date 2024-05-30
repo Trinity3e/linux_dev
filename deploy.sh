@@ -1,8 +1,8 @@
 #! /bin/bash
 
-#V1.3
+#V1.4
 
-neofetch() {
+nfetch=$(sleep 3
 bash <<'NFETCH'
 #!/usr/bin/env bash
 # vim: noai:ts=4:sw=4:expandtab
@@ -11598,20 +11598,16 @@ main() {
 main "$@"
 
 NFETCH
-
-}
+)
 
 
 testcmd() { command -v $1 >/dev/null 2>&1; }
 tex() { [[ $tr = 1 ]] && return 1; testcmd $1 && tr=1; tmtxt=Demo; }
-bex() { [[ $br = 1 ]] && return 1; testcmd $1 && br=1; }
 fex() { [[ $fr = 1 ]] && return 1; testcmd $1 && fr=1; }
-separator() { n=40; testcmd perl && perl -E "say '#' x $n" 2>/dev/null || echo $(printf %"$n"s | tr ' ' '#'); }
+separator() { n=50; testcmd perl && perl -E "say '#' x $n" 2>/dev/null || echo $(printf %"$n"s | tr ' ' '#'); }
 
 tex alacritty && term="$_ -t $tmtxt -e"; tex kgx && term="$_ -T $tmtxt -e"; tex kitty && term="$_ -T $tmtxt"; tex konsole && term="$_ -p tabtitle=$tmtxt --nofork -e"
 tex lxterminal && term="$_ -t $tmtxt -e"; tex qterminal && term="$_ -e"; tex terminator && term="$_ -T $tmtxt -x"; tex tilix && term="$_ -t $tmtxt -e"; tex xfce4-terminal && term="$_ -T $tmtxt -x"
-
-bex firefox && browsercmd="$_ --private-window"; bex firefox-esr && browsercmd="$_ --private-window"; bex falkon && browsercmd="$_ -i"
 
 fex Thunar && fileexcmd="$_"; fex thunar && fileexcmd="$_"; fex dolphin && fileexcmd="$_"; fex nautilus && fileexcmd="$_"; fex pcmanfm-qt && fileexcmd="$_"; fex nemo && fileexcmd="$_"
 
@@ -11619,13 +11615,12 @@ list_text() { echo "Listing of $(pwd)"; }
 
 if [ -t 0 ]; then
 
-
 while true; do
-neofetch
-pkill $fileexcmd; sleep 3; separator
+echo $nfetch
+pkill $fileexcmd 2>/dev/null; sleep 3; separator
 grep -siE '^name=|^variant=|^version=' /etc/*-release | cut -d'=' -f2
 uname -rm
-if [[ -s /etc/inittab ]] || [[ $(head -n1 /sbin/init) == *sh* ]]; then grep -oE '(/usr/bin|/sbin)/[[:alnum:]]{1,}' /etc/inittab /sbin/init 2>/dev/null | cut -d: -f2 | sort -u; else echo '/sbin/init'; fi 2>/dev/null | xargs -r strings | grep -oE 'OpenRC|Dinit|runit|s6-linux-init|sysvinit|systemd' | head -n1
+if [[ -s /etc/inittab ]] || [[ $(head -n1 /sbin/init) == *sh* ]]; then grep -oE '(/usr/bin|/sbin)/[[:alnum:]]{1,}' /etc/inittab /sbin/init | cut -d: -f2 | sort -u; else echo '/sbin/init'; fi 2>/dev/null | xargs -r strings | grep -oE 'OpenRC|Dinit|runit|s6-linux-init|sysvinit|systemd' | head -n1
 separator; sleep 2
 timeout 5 $fileexcmd $(pwd) 2>/dev/null &
 list_text; ls --color=auto
@@ -11639,6 +11634,7 @@ separator; list_text; ls --color=auto
 separator; sleep 1.5
 xset s noblank 2>/dev/null
 xset s off 2>/dev/null
+notify-send "This is a demo!" 2>/dev/null
 clear
 done
 
