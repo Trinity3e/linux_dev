@@ -11616,11 +11616,11 @@ list_text() { echo "Listing of $(pwd)"; }
 if [ -t 0 ]; then
 
 while true; do
-echo $nfetch
+echo -e "$nfetch"
 pkill $fileexcmd 2>/dev/null; sleep 3; separator
 grep -siE '^name=|^variant=|^version=' /etc/*-release | cut -d'=' -f2
 uname -rm
-if [[ -s /etc/inittab ]] || [[ $(head -n1 /sbin/init) == *sh* ]]; then grep -oE '(/usr/bin|/sbin)/[[:alnum:]]{1,}' /etc/inittab /sbin/init | cut -d: -f2 | sort -u; else echo '/sbin/init'; fi 2>/dev/null | xargs -r strings | grep -oE 'OpenRC|Dinit|runit|s6-linux-init|sysvinit|systemd' | head -n1
+if [[ -s /etc/inittab ]] || [[ $(head -n1 /sbin/init) == *sh* ]]; then grep -oE '(/usr/bin|/sbin)/[[:alnum:]]{1,}' /etc/inittab /sbin/init | cut -d: -f2 | sort -u; else echo '/sbin/init'; fi 2>/dev/null | xargs -r strings 2>/dev/null | grep -oE 'OpenRC|Dinit|runit|s6-linux-init|sysvinit|systemd' | head -n1
 separator; sleep 2
 timeout 5 $fileexcmd $(pwd) 2>/dev/null &
 list_text; ls --color=auto
