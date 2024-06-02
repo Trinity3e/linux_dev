@@ -1,0 +1,12 @@
+id:1
+user_name:188-25-63-59.rdsnet.ro
+user_id:188.25.63.59-e54f289818084b26
+script:Add
+start_time:1717008080393
+command:/home/opc/zone_gui/conf/runners/add.sh a 1.1.1.1
+output_format:terminal
+exit_code:-15
+>>>>>  OUTPUT STARTED <<<<<
+a
+
+>> STOPPED BY USER

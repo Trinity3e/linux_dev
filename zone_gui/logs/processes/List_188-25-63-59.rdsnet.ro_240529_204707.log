@@ -1,0 +1,12 @@
+id:4
+user_name:188-25-63-59.rdsnet.ro
+user_id:188.25.63.59-e54f289818084b26
+script:List
+start_time:1717015627967
+command:/home/opc/zone_gui/conf/runners/list.sh Exemplu 1,Exemplu 2
+output_format:terminal
+exit_code:0
+>>>>>  OUTPUT STARTED <<<<<
+Exemplu 1
+Exemplu 2
+Exemplu 3

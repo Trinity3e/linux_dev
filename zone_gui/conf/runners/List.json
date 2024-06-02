@@ -1,0 +1,16 @@
+{
+  "name": "List",
+  "script_path": "conf/runners/list.sh",
+  "description": "Zone listing",
+  "parameters": [
+    {
+      "name": "Select to remove",
+      "type": "multiselect",
+      "values": {
+        "script": "conf/runners/list.sh",
+        "shell": false
+      },
+      "pass_as": "argument"
+    }
+  ]
+}

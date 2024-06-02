@@ -1,0 +1,51 @@
+id:2
+user_name:188-25-63-59.rdsnet.ro
+user_id:188.25.63.59-e54f289818084b26
+script:Add
+start_time:1717008522435
+command:/home/opc/zone_gui/conf/runners/add.sh a 1.1.1.1
+output_format:terminal
+exit_code:0
+>>>>>  OUTPUT STARTED <<<<<
+1.1.1.1
+
+zone file:
+/////////
+
+    604800
+@       IN      SOA     a (
+                  3     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800 )   ; Negative Cache TTL
+;
+; name servers - NS records
+     IN      NS      ns1.cgii.ro.
+     IN      NS      ns2.cgii.ro.
+
+; name servers - A records
+ns1.cgii.ro.          IN      A       150.230.151.113
+ns2.cgii.ro.          IN      A       144.24.183.194
+
+; 10.128.0.0/16 - A records
+;www.a.            IN      A      1.1.1.1
+;a.                IN      A      1.1.1.1
+/////////
+master:
+
+zone "a" {
+    type master;
+    file "a.zone";
+    allow-transfer { 144.24.183.194; };
+};
+
+slave:
+
+zone "a" {
+    type master;
+    file "a.zone";
+    masters { 150.230.151.113; };
+};
+
+

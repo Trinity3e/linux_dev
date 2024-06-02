@@ -1,0 +1,10 @@
+id:9
+user_name:86.124.126.93
+user_id:86.124.126.93-fb9468f849814176
+script:List
+start_time:1717187099755
+command:/home/opc/zone_gui/conf/runners/list.sh
+output_format:terminal
+exit_code:0
+>>>>>  OUTPUT STARTED <<<<<
+grep: /etc/named.conf: Permission denied

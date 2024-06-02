@@ -1,0 +1,717 @@
+2024-05-29 21:35:52,080 [root.INFO] Starting Script Server, v1.18.0
+2024-05-29 21:35:52,080 [migrations.INFO] Applying migration add_execution_info_to_log_files
+2024-05-29 21:35:52,080 [migrations.INFO] Applying migration introduce_access_config
+2024-05-29 21:35:52,080 [migrations.INFO] Applying migration migrate_bash_formatting_to_output_format
+2024-05-29 21:35:52,081 [migrations.INFO] Applying migration add_user_id_to_log_files
+2024-05-29 21:35:52,081 [migrations.INFO] Applying migration migrate_repeat_param_and_same_arg_param
+2024-05-29 21:35:52,081 [migrations.INFO] Applying migration migrate_output_files_parameters_substitution
+2024-05-29 21:35:54,913 [web_server.INFO] Stopping server on interrupt
+2024-05-29 21:35:55,424 [root.INFO] Starting Script Server, v1.18.0
+2024-05-29 21:35:56,297 [web_server.INFO] Stopping server on interrupt
+2024-05-29 18:39:12,845 [root.INFO] Starting Script Server, v1.18.0
+2024-05-29 18:40:22,533 [tornado.access.INFO] 302 GET / (188.25.63.59) 1.04ms
+2024-05-29 18:40:22,766 [identification.INFO] Assigned user_id=188.25.63.59-e54f289818084b26 to {'ip': '188.25.63.59', 'hostname': '188-25-63-59.rdsnet.ro'}
+2024-05-29 18:40:22,775 [tornado.access.INFO] 200 GET /index.html (188.25.63.59) 208.90ms
+2024-05-29 18:40:22,823 [tornado.general.ERROR] Could not open static file '/home/opc/zone_gui/conf/theme/theme.css'
+2024-05-29 18:40:22,824 [tornado.access.INFO] 200 GET /theme/theme.css (188.25.63.59) 1.08ms
+2024-05-29 18:40:22,855 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (188.25.63.59) 5.48ms
+2024-05-29 18:40:22,893 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (188.25.63.59) 31.49ms
+2024-05-29 18:40:22,896 [tornado.access.INFO] 200 GET /css/index.aca68371.css (188.25.63.59) 33.67ms
+2024-05-29 18:40:22,948 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (188.25.63.59) 91.68ms
+2024-05-29 18:40:23,043 [tornado.access.INFO] 200 GET /favicon.ico (188.25.63.59) 1.57ms
+2024-05-29 18:40:23,051 [tornado.access.INFO] 200 GET /auth/info (188.25.63.59) 1.54ms
+2024-05-29 18:40:23,052 [tornado.access.INFO] 200 GET /conf (188.25.63.59) 1.11ms
+2024-05-29 18:40:23,054 [tornado.access.INFO] 200 GET /scripts (188.25.63.59) 2.40ms
+2024-05-29 18:40:23,055 [tornado.access.INFO] 200 GET /executions/active (188.25.63.59) 0.81ms
+2024-05-29 18:40:23,073 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (188.25.63.59) 1.71ms
+2024-05-29 18:40:25,094 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 0.92ms
+2024-05-29 18:40:27,953 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.93ms
+2024-05-29 18:40:27,960 [web.script_config_socket.ERROR] Failed to load script config List
+Traceback (most recent call last):
+  File "src/web/script_config_socket.py", line 191, in _prepare_model
+    config_model = yield (self._start_task(load_model))
+  File "/usr/lib64/python3.6/site-packages/tornado/gen.py", line 735, in run
+    value = future.result()
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "src/web/script_config_socket.py", line 186, in load_model
+    skip_invalid_parameters=skip_invalid_parameters)
+  File "src/config/config_service.py", line 260, in load_config_model
+    self._process_invoker)
+  File "src/config/config_service.py", line 346, in _load_script_config
+    pty_enabled_default=os_utils.is_pty_supported())
+  File "src/model/script_config.py", line 93, in __init__
+    self._init_parameters(username, audit_name)
+  File "src/model/script_config.py", line 184, in _init_parameters
+    self.working_directory)
+  File "src/model/parameter_config.py", line 72, in __init__
+    self._setup()
+  File "src/model/parameter_config.py", line 134, in _setup
+    self.constant)
+  File "src/model/parameter_config.py", line 237, in _create_values_provider
+    return ScriptValuesProvider(script, shell, self._process_invoker)
+  File "src/config/script/list_values.py", line 46, in __init__
+    script_output = process_invoker.invoke(script, shell=shell)
+  File "src/utils/process_utils.py", line 32, in invoke
+    shell=shell)
+  File "/usr/lib64/python3.6/subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib64/python3.6/subprocess.py", line 1364, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: '/home/opc/zone_gui/conf/runners/list.sh'
+2024-05-29 18:40:31,820 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.25ms
+2024-05-29 18:40:35,110 [web_server.INFO] Stopping server on interrupt
+2024-05-29 18:41:06,740 [root.INFO] Starting Script Server, v1.18.0
+2024-05-29 18:41:09,696 [tornado.access.INFO] 304 GET /index.html (188.25.63.59) 7.34ms
+2024-05-29 18:41:09,754 [tornado.general.ERROR] Could not open static file '/home/opc/zone_gui/conf/theme/theme.css'
+2024-05-29 18:41:09,754 [tornado.access.INFO] 200 GET /theme/theme.css (188.25.63.59) 0.96ms
+2024-05-29 18:41:09,782 [tornado.access.INFO] 304 GET /css/index.aca68371.css (188.25.63.59) 2.37ms
+2024-05-29 18:41:09,788 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (188.25.63.59) 7.45ms
+2024-05-29 18:41:09,791 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (188.25.63.59) 2.30ms
+2024-05-29 18:41:09,792 [tornado.access.INFO] 304 GET /css/chunk-index-vendors.f4386b5c.css (188.25.63.59) 3.17ms
+2024-05-29 18:41:09,862 [tornado.access.INFO] 304 GET /favicon.ico (188.25.63.59) 2.85ms
+2024-05-29 18:41:09,876 [tornado.access.INFO] 304 GET /auth/info (188.25.63.59) 8.35ms
+2024-05-29 18:41:09,877 [tornado.access.INFO] 304 GET /conf (188.25.63.59) 6.08ms
+2024-05-29 18:41:09,880 [tornado.access.INFO] 304 GET /scripts (188.25.63.59) 2.32ms
+2024-05-29 18:41:09,881 [tornado.access.INFO] 304 GET /executions/active (188.25.63.59) 2.77ms
+2024-05-29 18:41:09,897 [tornado.access.INFO] 304 GET /img/titleBackground_small.8d99a14e.jpg (188.25.63.59) 2.02ms
+2024-05-29 18:41:09,954 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.01ms
+2024-05-29 18:41:11,125 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.82ms
+2024-05-29 18:41:14,592 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.21ms
+2024-05-29 18:41:20,377 [web_server.INFO] Calling script Add. User {'ip': '188.25.63.59', 'hostname': '188-25-63-59.rdsnet.ro'}
+2024-05-29 18:41:20,378 [script_server.execution_service.INFO] Calling script #1: /home/opc/zone_gui/conf/runners/add.sh a 1.1.1.1
+2024-05-29 18:41:20,393 [tornado.access.INFO] 200 POST /executions/start (188.25.63.59) 21.61ms
+2024-05-29 18:41:20,397 [tornado.access.INFO] 200 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (188.25.63.59) 2.22ms
+2024-05-29 18:41:20,461 [tornado.access.INFO] 101 GET /executions/io/1 (188.25.63.59) 0.88ms
+2024-05-29 18:41:38,700 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 1.16ms
+2024-05-29 18:41:39,262 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.10ms
+2024-05-29 18:41:40,712 [tornado.access.INFO] 200 POST /executions/stop/1 (188.25.63.59) 2.50ms
+2024-05-29 18:41:40,795 [web_server.INFO] 188-25-63-59.rdsnet.ro disconnected
+2024-05-29 18:41:40,797 [tornado.access.INFO] 200 POST /executions/cleanup/1 (188.25.63.59) 1.29ms
+2024-05-29 18:41:44,545 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.88ms
+2024-05-29 18:41:45,185 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.15ms
+2024-05-29 18:41:48,092 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.88ms
+2024-05-29 18:41:48,959 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.16ms
+2024-05-29 18:41:49,831 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.85ms
+2024-05-29 18:41:52,077 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.13ms
+2024-05-29 18:41:53,395 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.86ms
+2024-05-29 18:41:53,859 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.39ms
+2024-05-29 18:41:54,323 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.78ms
+2024-05-29 18:41:54,647 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.19ms
+2024-05-29 18:41:55,081 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.82ms
+2024-05-29 18:41:55,460 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.20ms
+2024-05-29 18:41:55,780 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.86ms
+2024-05-29 18:41:56,112 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.20ms
+2024-05-29 18:41:56,448 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.89ms
+2024-05-29 18:42:50,109 [web_server.INFO] Stopping server on interrupt
+2024-05-29 18:48:28,562 [root.INFO] Starting Script Server, v1.18.0
+2024-05-29 18:48:34,735 [tornado.access.INFO] 200 GET /index.html (188.25.63.59) 8.15ms
+2024-05-29 18:48:34,782 [tornado.general.ERROR] Could not open static file '/home/opc/zone_gui/conf/theme/theme.css'
+2024-05-29 18:48:34,783 [tornado.access.INFO] 200 GET /theme/theme.css (188.25.63.59) 1.07ms
+2024-05-29 18:48:34,816 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (188.25.63.59) 6.92ms
+2024-05-29 18:48:34,821 [tornado.access.INFO] 200 GET /css/index.aca68371.css (188.25.63.59) 4.85ms
+2024-05-29 18:48:34,831 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (188.25.63.59) 14.14ms
+2024-05-29 18:48:34,878 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (188.25.63.59) 46.57ms
+2024-05-29 18:48:34,998 [tornado.access.INFO] 200 GET /favicon.ico (188.25.63.59) 2.49ms
+2024-05-29 18:48:35,007 [tornado.access.INFO] 200 GET /conf (188.25.63.59) 0.96ms
+2024-05-29 18:48:35,009 [tornado.access.INFO] 200 GET /auth/info (188.25.63.59) 2.56ms
+2024-05-29 18:48:35,012 [tornado.access.INFO] 200 GET /scripts (188.25.63.59) 1.81ms
+2024-05-29 18:48:35,013 [tornado.access.INFO] 200 GET /executions/active (188.25.63.59) 0.68ms
+2024-05-29 18:48:35,031 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (188.25.63.59) 2.71ms
+2024-05-29 18:48:35,095 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.96ms
+2024-05-29 18:48:37,434 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.19ms
+2024-05-29 18:48:42,427 [web_server.INFO] Calling script Add. User {'ip': '188.25.63.59', 'hostname': '188-25-63-59.rdsnet.ro'}
+2024-05-29 18:48:42,428 [script_server.execution_service.INFO] Calling script #2: /home/opc/zone_gui/conf/runners/add.sh a 1.1.1.1
+2024-05-29 18:48:42,436 [tornado.access.INFO] 200 POST /executions/start (188.25.63.59) 12.22ms
+2024-05-29 18:48:42,501 [tornado.access.INFO] 101 GET /executions/io/2 (188.25.63.59) 1.00ms
+2024-05-29 18:48:42,631 [web_server.INFO] 188-25-63-59.rdsnet.ro disconnected
+2024-05-29 18:48:42,633 [tornado.access.INFO] 200 POST /executions/cleanup/2 (188.25.63.59) 1.29ms
+2024-05-29 18:48:42,737 [tornado.access.INFO] 200 GET /favicon.ico (188.25.63.59) 1.30ms
+2024-05-29 18:50:56,674 [tornado.access.INFO] 302 GET / (188.25.63.59) 0.69ms
+2024-05-29 18:50:56,708 [tornado.access.INFO] 200 GET /index.html (188.25.63.59) 2.27ms
+2024-05-29 18:50:56,754 [tornado.access.INFO] 200 GET /theme/theme.css (188.25.63.59) 1.01ms
+2024-05-29 18:50:56,786 [tornado.access.INFO] 200 GET /css/index.aca68371.css (188.25.63.59) 3.57ms
+2024-05-29 18:50:56,789 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (188.25.63.59) 2.18ms
+2024-05-29 18:50:56,793 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (188.25.63.59) 6.10ms
+2024-05-29 18:50:56,795 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (188.25.63.59) 1.53ms
+2024-05-29 18:50:56,883 [tornado.access.INFO] 304 GET /favicon.ico (188.25.63.59) 1.29ms
+2024-05-29 18:50:57,054 [tornado.access.INFO] 304 GET /auth/info (188.25.63.59) 152.87ms
+2024-05-29 18:50:57,058 [tornado.access.INFO] 200 GET /scripts (188.25.63.59) 2.74ms
+2024-05-29 18:50:57,058 [tornado.access.INFO] 200 GET /conf (188.25.63.59) 2.84ms
+2024-05-29 18:50:57,060 [tornado.access.INFO] 200 GET /executions/active (188.25.63.59) 1.35ms
+2024-05-29 18:50:57,061 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (188.25.63.59) 2.21ms
+2024-05-29 18:50:58,521 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 0.89ms
+2024-05-29 18:51:00,846 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.79ms
+2024-05-29 18:51:01,336 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.13ms
+2024-05-29 18:51:01,892 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.84ms
+2024-05-29 18:51:04,877 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.16ms
+2024-05-29 18:56:23,905 [tornado.access.INFO] 302 GET / (188.25.63.59) 0.68ms
+2024-05-29 18:56:23,938 [tornado.access.INFO] 304 GET /index.html (188.25.63.59) 1.85ms
+2024-05-29 18:56:23,983 [tornado.access.INFO] 304 GET /css/index.aca68371.css (188.25.63.59) 1.50ms
+2024-05-29 18:56:24,014 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (188.25.63.59) 4.79ms
+2024-05-29 18:56:24,015 [tornado.access.INFO] 200 GET /theme/theme.css (188.25.63.59) 0.62ms
+2024-05-29 18:56:24,018 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (188.25.63.59) 2.08ms
+2024-05-29 18:56:24,019 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (188.25.63.59) 2.52ms
+2024-05-29 18:56:24,096 [tornado.access.INFO] 200 GET /favicon.ico (188.25.63.59) 1.33ms
+2024-05-29 18:56:24,108 [tornado.access.INFO] 200 GET /executions/active (188.25.63.59) 1.31ms
+2024-05-29 18:56:24,110 [tornado.access.INFO] 200 GET /auth/info (188.25.63.59) 2.50ms
+2024-05-29 18:56:24,111 [tornado.access.INFO] 200 GET /conf (188.25.63.59) 0.69ms
+2024-05-29 18:56:24,113 [tornado.access.INFO] 200 GET /scripts (188.25.63.59) 1.80ms
+2024-05-29 18:56:24,126 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (188.25.63.59) 1.33ms
+2024-05-29 18:56:25,649 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 0.85ms
+2024-05-29 18:56:26,202 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.82ms
+2024-05-29 18:56:27,229 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.12ms
+2024-05-29 18:56:29,888 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.90ms
+2024-05-29 18:57:08,261 [tornado.general.INFO] Malformed HTTP message from 86.124.126.93: Malformed HTTP version in HTTP Request-Line: ''
+2024-05-29 18:57:30,012 [tornado.access.INFO] 302 GET / (86.124.126.93) 0.93ms
+2024-05-29 18:57:30,901 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:30,901 [identification.INFO] Assigned user_id=86.124.126.93-fb9468f849814176 to {'ip': '86.124.126.93'}
+2024-05-29 18:57:30,903 [tornado.access.INFO] 200 GET /index.html (86.124.126.93) 805.72ms
+2024-05-29 18:57:31,234 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 0.63ms
+2024-05-29 18:57:31,317 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (86.124.126.93) 5.04ms
+2024-05-29 18:57:31,322 [tornado.access.INFO] 200 GET /css/index.aca68371.css (86.124.126.93) 3.62ms
+2024-05-29 18:57:31,347 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (86.124.126.93) 8.96ms
+2024-05-29 18:57:31,695 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (86.124.126.93) 376.46ms
+2024-05-29 18:57:32,672 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:32,673 [tornado.access.INFO] 200 GET /auth/info (86.124.126.93) 3.18ms
+2024-05-29 18:57:32,674 [tornado.access.INFO] 200 GET /conf (86.124.126.93) 0.72ms
+2024-05-29 18:57:32,677 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:32,678 [tornado.access.INFO] 200 GET /scripts (86.124.126.93) 3.33ms
+2024-05-29 18:57:32,685 [tornado.access.INFO] 200 GET /executions/active (86.124.126.93) 0.90ms
+2024-05-29 18:57:32,706 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (86.124.126.93) 1.60ms
+2024-05-29 18:57:32,786 [tornado.access.INFO] 200 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (86.124.126.93) 4.50ms
+2024-05-29 18:57:32,803 [tornado.access.INFO] 200 GET /fonts/roboto-latin-300.ef7c6637.woff2 (86.124.126.93) 2.53ms
+2024-05-29 18:57:32,813 [tornado.access.INFO] 200 GET /favicon.ico (86.124.126.93) 1.26ms
+2024-05-29 18:57:34,990 [tornado.access.INFO] 304 GET /index.html (86.124.126.93) 1.73ms
+2024-05-29 18:57:35,121 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 0.65ms
+2024-05-29 18:57:35,327 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:35,327 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 3.25ms
+2024-05-29 18:57:35,329 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 1.04ms
+2024-05-29 18:57:35,759 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:35,760 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 432.16ms
+2024-05-29 18:57:35,762 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 0.87ms
+2024-05-29 18:57:36,792 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 1.02ms
+2024-05-29 18:57:37,447 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:47,459 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:48,157 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:48,159 [web_server.INFO] Calling script Add. User {'ip': '86.124.126.93'}
+2024-05-29 18:57:48,160 [script_server.execution_service.INFO] Calling script #3: /home/opc/zone_gui/conf/runners/add.sh aaa.com 1.1.1.1
+2024-05-29 18:57:48,168 [tornado.access.INFO] 200 POST /executions/start (86.124.126.93) 1315.02ms
+2024-05-29 18:57:48,514 [tornado.access.INFO] 101 GET /executions/io/3 (86.124.126.93) 1.22ms
+2024-05-29 18:57:49,206 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:49,790 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:50,815 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:50,815 [web_server.INFO] 86.124.126.93 disconnected
+2024-05-29 18:57:51,585 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 18:57:51,586 [tornado.access.INFO] 200 POST /executions/cleanup/3 (86.124.126.93) 769.79ms
+2024-05-29 19:04:39,759 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 312.16ms
+2024-05-29 19:04:40,687 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-29 20:46:54,960 [tornado.access.INFO] 302 GET / (188.25.63.59) 8.75ms
+2024-05-29 20:46:55,057 [tornado.access.INFO] 200 GET /index.html (188.25.63.59) 58.57ms
+2024-05-29 20:46:55,114 [tornado.access.INFO] 200 GET /theme/theme.css (188.25.63.59) 1.40ms
+2024-05-29 20:46:55,165 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (188.25.63.59) 24.89ms
+2024-05-29 20:46:55,198 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (188.25.63.59) 32.18ms
+2024-05-29 20:46:55,280 [tornado.access.INFO] 200 GET /css/index.aca68371.css (188.25.63.59) 113.67ms
+2024-05-29 20:46:55,339 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (188.25.63.59) 173.39ms
+2024-05-29 20:46:55,423 [tornado.access.INFO] 200 GET /favicon.ico (188.25.63.59) 2.69ms
+2024-05-29 20:46:55,445 [tornado.access.INFO] 200 GET /auth/info (188.25.63.59) 9.21ms
+2024-05-29 20:46:55,448 [tornado.access.INFO] 200 GET /conf (188.25.63.59) 1.81ms
+2024-05-29 20:46:55,458 [tornado.access.INFO] 200 GET /scripts (188.25.63.59) 9.54ms
+2024-05-29 20:46:55,461 [tornado.access.INFO] 200 GET /executions/active (188.25.63.59) 11.40ms
+2024-05-29 20:46:55,472 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (188.25.63.59) 9.36ms
+2024-05-29 20:46:57,480 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 2.22ms
+2024-05-29 20:46:58,051 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 1.90ms
+2024-05-29 20:47:07,942 [web_server.INFO] Calling script List. User {'ip': '188.25.63.59', 'hostname': '188-25-63-59.rdsnet.ro'}
+2024-05-29 20:47:07,948 [script_server.execution_service.INFO] Calling script #4: /home/opc/zone_gui/conf/runners/list.sh Exemplu 1,Exemplu 2
+2024-05-29 20:47:07,974 [tornado.access.INFO] 200 POST /executions/start (188.25.63.59) 95.25ms
+2024-05-29 20:47:07,979 [tornado.access.INFO] 200 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (188.25.63.59) 4.18ms
+2024-05-29 20:47:08,043 [tornado.access.INFO] 101 GET /executions/io/4 (188.25.63.59) 1.44ms
+2024-05-29 20:47:08,130 [web_server.INFO] 188-25-63-59.rdsnet.ro disconnected
+2024-05-29 20:47:08,133 [tornado.access.INFO] 200 POST /executions/cleanup/4 (188.25.63.59) 1.41ms
+2024-05-29 20:47:10,893 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 0.92ms
+2024-05-29 20:50:50,890 [web_server.INFO] Calling script Add. User {'ip': '188.25.63.59', 'hostname': '188-25-63-59.rdsnet.ro'}
+2024-05-29 20:50:50,891 [script_server.execution_service.INFO] Calling script #5: /home/opc/zone_gui/conf/runners/add.sh asasas 8.8.8.8
+2024-05-29 20:50:50,899 [tornado.access.INFO] 200 POST /executions/start (188.25.63.59) 12.04ms
+2024-05-29 20:50:50,960 [tornado.access.INFO] 101 GET /executions/io/5 (188.25.63.59) 0.98ms
+2024-05-29 20:50:51,082 [web_server.INFO] 188-25-63-59.rdsnet.ro disconnected
+2024-05-29 20:50:51,086 [tornado.access.INFO] 200 POST /executions/cleanup/5 (188.25.63.59) 1.34ms
+2024-05-29 20:50:51,209 [tornado.access.INFO] 200 GET /favicon.ico (188.25.63.59) 1.30ms
+2024-05-29 20:51:01,782 [web_server.INFO] Calling script Add. User {'ip': '188.25.63.59', 'hostname': '188-25-63-59.rdsnet.ro'}
+2024-05-29 20:51:01,783 [script_server.execution_service.INFO] Calling script #6: /home/opc/zone_gui/conf/runners/add.sh asasas 8.8.8.8 8.8.8.8 ::1
+2024-05-29 20:51:01,789 [tornado.access.INFO] 200 POST /executions/start (188.25.63.59) 13.93ms
+2024-05-29 20:51:01,850 [tornado.access.INFO] 101 GET /executions/io/6 (188.25.63.59) 1.96ms
+2024-05-29 20:51:01,975 [web_server.INFO] 188-25-63-59.rdsnet.ro disconnected
+2024-05-29 20:51:01,978 [tornado.access.INFO] 200 POST /executions/cleanup/6 (188.25.63.59) 1.39ms
+2024-05-29 21:26:22,811 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.11ms
+2024-05-29 21:26:24,842 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (188.25.63.59) 0.88ms
+2024-05-29 21:26:25,786 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (188.25.63.59) 1.17ms
+2024-05-29 21:48:27,547 [tornado.access.INFO] 302 GET / (162.216.149.244) 2.54ms
+2024-05-29 21:48:27,909 [identification.INFO] Assigned user_id=162.216.149.244-a80cf138231f4f79 to {'ip': '162.216.149.244', 'hostname': '244.149.216.162.bc.googleusercontent.com'}
+2024-05-29 21:48:27,913 [tornado.access.INFO] 200 GET /index.html (162.216.149.244) 93.23ms
+2024-05-30 02:11:30,037 [tornado.access.INFO] 302 GET / (206.189.19.19) 63.67ms
+2024-05-30 02:11:30,043 [tornado.general.INFO] Malformed HTTP message from 206.189.19.19: no colon in header line
+2024-05-30 02:11:30,084 [tornado.access.INFO] 302 GET / (206.189.19.19) 1.86ms
+2024-05-30 02:11:30,387 [identification.INFO] Assigned user_id=206.189.19.19-7084bf7cdf254114 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,401 [tornado.access.WARNING] 404 GET /server (206.189.19.19) 274.93ms
+2024-05-30 02:11:30,430 [identification.INFO] Assigned user_id=206.189.19.19-5ddea81dd0a245b0 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,431 [tornado.access.WARNING] 404 GET /.vscode/sftp.json (206.189.19.19) 3.43ms
+2024-05-30 02:11:30,481 [identification.INFO] Assigned user_id=206.189.19.19-2e7e29e137224c2d to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,482 [tornado.access.WARNING] 404 GET /about (206.189.19.19) 2.19ms
+2024-05-30 02:11:30,525 [identification.INFO] Assigned user_id=206.189.19.19-d974beb11b0a488e to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,526 [tornado.access.WARNING] 404 GET /debug/default/view?panel=config (206.189.19.19) 2.80ms
+2024-05-30 02:11:30,580 [identification.INFO] Assigned user_id=206.189.19.19-37fefd6fad304ca7 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,581 [tornado.access.WARNING] 404 GET /v2/_catalog (206.189.19.19) 2.12ms
+2024-05-30 02:11:30,621 [identification.INFO] Assigned user_id=206.189.19.19-951da72187d54a9e to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,622 [tornado.access.WARNING] 404 GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application (206.189.19.19) 2.77ms
+2024-05-30 02:11:30,683 [identification.INFO] Assigned user_id=206.189.19.19-30590d5102224107 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,685 [tornado.access.WARNING] 404 GET /server-status (206.189.19.19) 3.59ms
+2024-05-30 02:11:30,726 [identification.INFO] Assigned user_id=206.189.19.19-9cf5edcfbdb24fae to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,728 [tornado.access.WARNING] 404 GET /_all_dbs (206.189.19.19) 3.18ms
+2024-05-30 02:11:30,781 [identification.INFO] Assigned user_id=206.189.19.19-ac69bccc166f48c4 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,783 [tornado.access.WARNING] 404 GET /.DS_Store (206.189.19.19) 9.16ms
+2024-05-30 02:11:30,813 [identification.INFO] Assigned user_id=206.189.19.19-54eb258ece74446e to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,814 [tornado.access.WARNING] 404 GET /.env (206.189.19.19) 2.09ms
+2024-05-30 02:11:30,870 [identification.INFO] Assigned user_id=206.189.19.19-6e1cf4580ce746d9 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,871 [tornado.access.WARNING] 404 GET /.git/config (206.189.19.19) 2.12ms
+2024-05-30 02:11:30,903 [identification.INFO] Assigned user_id=206.189.19.19-11af227c3a5f4cd0 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,904 [tornado.access.WARNING] 404 GET /s/53e2833313e223e2833313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties (206.189.19.19) 1.92ms
+2024-05-30 02:11:30,949 [identification.INFO] Assigned user_id=206.189.19.19-7e8185967bc24fb5 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,951 [tornado.access.WARNING] 404 GET /config.json (206.189.19.19) 2.82ms
+2024-05-30 02:11:30,979 [identification.INFO] Assigned user_id=206.189.19.19-9f5e597db6034579 to {'ip': '206.189.19.19', 'hostname': 'b37662257c.scan.leakix.org'}
+2024-05-30 02:11:30,981 [tornado.access.WARNING] 404 GET /telescope/requests (206.189.19.19) 2.98ms
+2024-05-30 02:11:31,029 [tornado.access.INFO] 302 GET /?rest_route=/wp/v2/users/ (206.189.19.19) 0.67ms
+2024-05-30 04:23:34,935 [tornado.access.INFO] 302 GET / (198.235.24.87) 0.83ms
+2024-05-30 04:23:35,500 [script_server.audit_utils.WARNING] Could not get hostname for 198.235.24.87
+2024-05-30 04:23:35,500 [identification.INFO] Assigned user_id=198.235.24.87-41b4e9bcf4b84927 to {'ip': '198.235.24.87'}
+2024-05-30 04:23:35,510 [tornado.access.INFO] 200 GET /index.html (198.235.24.87) 79.78ms
+2024-05-30 09:00:48,647 [tornado.access.INFO] 302 GET / (198.235.24.135) 300.37ms
+2024-05-30 09:00:48,834 [script_server.audit_utils.WARNING] Could not get hostname for 198.235.24.135
+2024-05-30 09:00:48,836 [identification.INFO] Assigned user_id=198.235.24.135-78f39eac5b464890 to {'ip': '198.235.24.135'}
+2024-05-30 09:00:48,928 [tornado.access.INFO] 200 GET /index.html (198.235.24.135) 226.79ms
+2024-05-30 10:14:38,117 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 5.74ms
+2024-05-30 10:14:38,167 [tornado.access.INFO] 304 GET /css/chunk-index-vendors.f4386b5c.css (86.124.126.93) 14.72ms
+2024-05-30 10:14:38,196 [tornado.access.INFO] 304 GET /css/index.aca68371.css (86.124.126.93) 2.45ms
+2024-05-30 10:14:38,224 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (86.124.126.93) 3.70ms
+2024-05-30 10:14:38,260 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (86.124.126.93) 5.29ms
+2024-05-30 10:14:38,668 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 23.11ms
+2024-05-30 10:14:39,303 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:14:39,310 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 640.84ms
+2024-05-30 10:14:39,325 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:14:39,393 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 80.55ms
+2024-05-30 10:14:39,397 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 83.99ms
+2024-05-30 10:14:39,400 [tornado.access.INFO] 304 GET /img/titleBackground_small.8d99a14e.jpg (86.124.126.93) 85.71ms
+2024-05-30 10:14:39,403 [tornado.access.INFO] 304 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (86.124.126.93) 86.72ms
+2024-05-30 10:14:39,404 [tornado.access.INFO] 304 GET /fonts/roboto-latin-300.ef7c6637.woff2 (86.124.126.93) 87.01ms
+2024-05-30 10:14:39,600 [tornado.access.INFO] 304 GET /favicon.ico (86.124.126.93) 3.15ms
+2024-05-30 10:14:39,843 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 27.75ms
+2024-05-30 10:14:39,852 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:14:42,360 [tornado.access.INFO] 304 GET /index.html (86.124.126.93) 2.23ms
+2024-05-30 10:14:42,767 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 0.71ms
+2024-05-30 10:14:43,410 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:14:43,411 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 388.45ms
+2024-05-30 10:14:43,415 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 3.07ms
+2024-05-30 10:14:43,421 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:14:43,423 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 10.56ms
+2024-05-30 10:14:43,423 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 10.72ms
+2024-05-30 10:14:43,677 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 1.63ms
+2024-05-30 10:14:43,683 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:25:03,761 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 2.79ms
+2024-05-30 10:25:04,409 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:25:04,456 [root.WARNING] Parameter Host has invalid value, skipping
+2024-05-30 10:25:04,459 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-05-30 10:29:09,461 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 3.01ms
+2024-05-30 10:29:10,033 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:29:10,037 [root.WARNING] Parameter Host has invalid value, skipping
+2024-05-30 10:29:10,037 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-05-30 10:51:20,183 [tornado.access.INFO] 302 GET / (86.124.126.93) 0.93ms
+2024-05-30 10:51:20,719 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 1.34ms
+2024-05-30 10:51:21,049 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 1.02ms
+2024-05-30 10:51:21,722 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:21,723 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 569.79ms
+2024-05-30 10:51:22,307 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:22,309 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 585.23ms
+2024-05-30 10:51:22,309 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 585.34ms
+2024-05-30 10:51:25,337 [tornado.access.INFO] 304 GET /index.html (86.124.126.93) 1.64ms
+2024-05-30 10:51:25,497 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 0.65ms
+2024-05-30 10:51:26,221 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:26,221 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 556.86ms
+2024-05-30 10:51:26,224 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 1.47ms
+2024-05-30 10:51:26,778 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:26,780 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 556.92ms
+2024-05-30 10:51:26,780 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 557.18ms
+2024-05-30 10:51:34,024 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 0.88ms
+2024-05-30 10:51:34,576 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:41,020 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:41,587 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:41,591 [web_server.INFO] Calling script Add. User {'ip': '86.124.126.93'}
+2024-05-30 10:51:41,593 [script_server.execution_service.INFO] Calling script #7: /home/opc/zone_gui/conf/runners/add.sh bla 1.1.1.1
+2024-05-30 10:51:41,662 [tornado.access.INFO] 200 POST /executions/start (86.124.126.93) 1219.90ms
+2024-05-30 10:51:41,859 [tornado.access.INFO] 101 GET /executions/io/7 (86.124.126.93) 1.74ms
+2024-05-30 10:51:42,432 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:42,997 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:43,889 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:43,890 [web_server.INFO] 86.124.126.93 disconnected
+2024-05-30 10:51:44,474 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-30 10:51:44,475 [tornado.access.INFO] 200 POST /executions/cleanup/7 (86.124.126.93) 584.80ms
+2024-05-30 10:52:11,664 [tornado.access.INFO] 302 GET / (104.28.106.147) 0.72ms
+2024-05-30 10:52:11,788 [script_server.audit_utils.WARNING] Could not get hostname for 104.28.106.147
+2024-05-30 10:52:11,788 [identification.INFO] Assigned user_id=104.28.106.147-8a7f8ea0de394d83 to {'ip': '104.28.106.147'}
+2024-05-30 10:52:11,810 [tornado.access.INFO] 200 GET /index.html (104.28.106.147) 30.88ms
+2024-05-30 10:52:11,895 [tornado.access.INFO] 200 GET /theme/theme.css (104.28.106.147) 0.95ms
+2024-05-30 10:52:11,920 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (104.28.106.147) 18.76ms
+2024-05-30 10:52:11,981 [tornado.access.INFO] 200 GET /css/index.aca68371.css (104.28.106.147) 4.79ms
+2024-05-30 10:52:12,039 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (104.28.106.147) 56.88ms
+2024-05-30 10:52:12,065 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (104.28.106.147) 83.09ms
+2024-05-30 10:52:12,302 [tornado.access.INFO] 200 GET /favicon.ico (104.28.106.147) 2.32ms
+2024-05-30 10:52:12,320 [script_server.audit_utils.WARNING] Could not get hostname for 104.28.106.147
+2024-05-30 10:52:12,321 [tornado.access.INFO] 200 GET /auth/info (104.28.106.147) 3.04ms
+2024-05-30 10:52:12,322 [tornado.access.INFO] 200 GET /conf (104.28.106.147) 3.03ms
+2024-05-30 10:52:12,324 [script_server.audit_utils.WARNING] Could not get hostname for 104.28.106.147
+2024-05-30 10:52:12,325 [tornado.access.INFO] 200 GET /scripts (104.28.106.147) 2.52ms
+2024-05-30 10:52:12,326 [tornado.access.INFO] 200 GET /executions/active (104.28.106.147) 0.70ms
+2024-05-30 10:52:12,396 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (104.28.106.147) 3.13ms
+2024-05-30 10:52:12,423 [tornado.access.INFO] 200 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (104.28.106.147) 2.53ms
+2024-05-30 11:18:59,525 [tornado.access.INFO] 302 GET / (93.122.248.130) 0.74ms
+2024-05-30 11:18:59,701 [identification.INFO] Assigned user_id=93.122.248.130-a2ce77466a4f4734 to {'ip': '93.122.248.130', 'hostname': '93-122-248-130.orangero.net'}
+2024-05-30 11:18:59,704 [tornado.access.INFO] 200 GET /index.html (93.122.248.130) 70.39ms
+2024-05-30 11:18:59,811 [tornado.access.INFO] 200 GET /theme/theme.css (93.122.248.130) 0.94ms
+2024-05-30 11:18:59,815 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (93.122.248.130) 4.84ms
+2024-05-30 11:18:59,882 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (93.122.248.130) 10.39ms
+2024-05-30 11:18:59,913 [tornado.access.INFO] 200 GET /css/index.aca68371.css (93.122.248.130) 2.86ms
+2024-05-30 11:18:59,996 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (93.122.248.130) 123.42ms
+2024-05-30 11:19:00,248 [tornado.access.INFO] 200 GET /auth/info (93.122.248.130) 3.75ms
+2024-05-30 11:19:00,250 [tornado.access.INFO] 200 GET /scripts (93.122.248.130) 4.99ms
+2024-05-30 11:19:00,251 [tornado.access.INFO] 200 GET /conf (93.122.248.130) 5.21ms
+2024-05-30 11:19:00,251 [tornado.access.INFO] 200 GET /executions/active (93.122.248.130) 5.09ms
+2024-05-30 11:19:00,253 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (93.122.248.130) 6.27ms
+2024-05-30 11:19:00,308 [tornado.access.INFO] 200 GET /favicon.ico (93.122.248.130) 1.23ms
+2024-05-30 11:19:05,776 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (93.122.248.130) 0.86ms
+2024-05-30 11:19:18,445 [web_server.INFO] Calling script List. User {'ip': '93.122.248.130', 'hostname': '93-122-248-130.orangero.net'}
+2024-05-30 11:19:18,446 [script_server.execution_service.INFO] Calling script #8: /home/opc/zone_gui/conf/runners/list.sh Exemplu 1,Exemplu 2,Exemplu 3
+2024-05-30 11:19:18,455 [tornado.access.INFO] 200 POST /executions/start (93.122.248.130) 39.58ms
+2024-05-30 11:19:18,459 [tornado.access.INFO] 200 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (93.122.248.130) 2.71ms
+2024-05-30 11:19:18,617 [tornado.access.INFO] 101 GET /executions/io/8 (93.122.248.130) 0.78ms
+2024-05-30 11:19:18,775 [web_server.INFO] 93-122-248-130.orangero.net disconnected
+2024-05-30 11:19:18,829 [tornado.access.INFO] 200 POST /executions/cleanup/8 (93.122.248.130) 1.51ms
+2024-05-30 11:19:31,658 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (93.122.248.130) 2.42ms
+2024-05-30 11:19:49,650 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (93.122.248.130) 0.87ms
+2024-05-30 11:19:55,875 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (93.122.248.130) 1.17ms
+2024-05-30 13:06:20,932 [tornado.access.INFO] 200 GET /index.html (104.28.106.147) 3.35ms
+2024-05-30 13:06:21,055 [tornado.access.INFO] 200 GET /theme/theme.css (104.28.106.147) 0.68ms
+2024-05-30 14:14:41,142 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (93.122.250.153) 1.23ms
+2024-05-30 14:14:41,585 [root.WARNING] Parameter Host has invalid value, skipping
+2024-05-30 14:14:41,585 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-05-30 14:30:26,743 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (213.233.85.186) 0.99ms
+2024-05-30 14:30:26,817 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-05-30 14:30:26,829 [root.WARNING] Parameter Host has invalid value, skipping
+2024-05-30 14:30:26,829 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-05-30 15:17:22,083 [identification.INFO] Assigned user_id=104.131.144.26-521457baab2d46dc to {'ip': '104.131.144.26', 'hostname': 'apzg-0720b-019.stretchoid.com'}
+2024-05-30 15:17:22,086 [tornado.access.WARNING] 404 GET /v2/ (104.131.144.26) 127.48ms
+2024-05-30 19:04:31,422 [identification.INFO] Assigned user_id=198.199.108.39-79a4a0ef2c9145a8 to {'ip': '198.199.108.39', 'hostname': 'apzg-0720e-039.stretchoid.com'}
+2024-05-30 19:04:31,426 [tornado.access.WARNING] 404 GET /v2/ (198.199.108.39) 120.01ms
+2024-05-30 19:08:39,360 [tornado.access.INFO] 302 GET / (96.126.110.74) 4.58ms
+2024-05-30 19:08:39,362 [tornado.general.INFO] Malformed HTTP message from 96.126.110.74: no colon in header line
+2024-05-30 19:08:39,554 [tornado.access.INFO] 302 GET / (96.126.110.74) 0.78ms
+2024-05-30 19:08:39,749 [identification.INFO] Assigned user_id=96.126.110.74-425e211f060f4bf8 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:39,752 [tornado.access.WARNING] 404 GET /server (96.126.110.74) 8.10ms
+2024-05-30 19:08:39,938 [identification.INFO] Assigned user_id=96.126.110.74-28afd966e99b40ee to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:39,939 [tornado.access.WARNING] 404 GET /.vscode/sftp.json (96.126.110.74) 3.34ms
+2024-05-30 19:08:40,180 [identification.INFO] Assigned user_id=96.126.110.74-deab3586e62f4496 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:40,181 [tornado.access.WARNING] 404 GET /about (96.126.110.74) 57.55ms
+2024-05-30 19:08:40,373 [identification.INFO] Assigned user_id=96.126.110.74-4ebf7ffe1d684ed8 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:40,374 [tornado.access.WARNING] 404 GET /debug/default/view?panel=config (96.126.110.74) 2.44ms
+2024-05-30 19:08:40,565 [identification.INFO] Assigned user_id=96.126.110.74-8688aea409604d72 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:40,566 [tornado.access.WARNING] 404 GET /v2/_catalog (96.126.110.74) 2.33ms
+2024-05-30 19:08:40,762 [identification.INFO] Assigned user_id=96.126.110.74-7337118c47994d3b to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:40,763 [tornado.access.WARNING] 404 GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application (96.126.110.74) 2.27ms
+2024-05-30 19:08:40,953 [identification.INFO] Assigned user_id=96.126.110.74-c0b1dd521e614109 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:40,956 [tornado.access.WARNING] 404 GET /server-status (96.126.110.74) 3.78ms
+2024-05-30 19:08:41,143 [identification.INFO] Assigned user_id=96.126.110.74-f7fc8824ed6a4f49 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:41,144 [tornado.access.WARNING] 404 GET /_all_dbs (96.126.110.74) 2.52ms
+2024-05-30 19:08:41,375 [identification.INFO] Assigned user_id=96.126.110.74-250ac4e51e6f4b77 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:41,376 [tornado.access.WARNING] 404 GET /.DS_Store (96.126.110.74) 2.13ms
+2024-05-30 19:08:41,626 [identification.INFO] Assigned user_id=96.126.110.74-9530814977614fc4 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:42,450 [tornado.access.WARNING] 404 GET /.env (96.126.110.74) 825.06ms
+2024-05-30 19:08:42,644 [identification.INFO] Assigned user_id=96.126.110.74-db2e97c7b71a4bee to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:42,645 [tornado.access.WARNING] 404 GET /.git/config (96.126.110.74) 2.51ms
+2024-05-30 19:08:42,835 [identification.INFO] Assigned user_id=96.126.110.74-8565a944f00c4725 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:42,836 [tornado.access.WARNING] 404 GET /s/53e2833313e223e2833313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties (96.126.110.74) 2.10ms
+2024-05-30 19:08:43,027 [identification.INFO] Assigned user_id=96.126.110.74-18e54ada03a44f36 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:43,028 [tornado.access.WARNING] 404 GET /config.json (96.126.110.74) 2.21ms
+2024-05-30 19:08:43,209 [identification.INFO] Assigned user_id=96.126.110.74-49ecc6287aa34f31 to {'ip': '96.126.110.74', 'hostname': '96-126-110-74.ip.linodeusercontent.com'}
+2024-05-30 19:08:43,210 [tornado.access.WARNING] 404 GET /telescope/requests (96.126.110.74) 2.16ms
+2024-05-30 19:08:43,396 [tornado.access.INFO] 302 GET /?rest_route=/wp/v2/users/ (96.126.110.74) 0.74ms
+2024-05-30 19:22:19,742 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/cd06fb3613f9/1717008080373
+2024-05-30 19:22:19,744 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/cd06fb3613f9/1717008522425
+2024-05-30 19:22:19,744 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/b484cfa5de0f/1717009067460
+2024-05-30 19:38:52,359 [tornado.access.INFO] 302 GET / (205.210.31.161) 0.89ms
+2024-05-30 19:38:52,784 [script_server.audit_utils.WARNING] Could not get hostname for 205.210.31.161
+2024-05-30 19:38:52,784 [identification.INFO] Assigned user_id=205.210.31.161-dc805dcc27224dae to {'ip': '205.210.31.161'}
+2024-05-30 19:38:52,788 [tornado.access.INFO] 200 GET /index.html (205.210.31.161) 9.57ms
+2024-05-30 21:17:31,748 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/cd06fb3613f9/1717015627883
+2024-05-30 21:17:31,750 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/cd06fb3613f9/1717015850888
+2024-05-30 21:17:31,750 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/cd06fb3613f9/1717015861777
+2024-05-30 22:53:43,354 [tornado.access.INFO] 302 GET / (43.157.82.72) 0.76ms
+2024-05-30 22:54:12,100 [tornado.access.INFO] 302 GET / (36.99.136.128) 0.60ms
+2024-05-30 22:54:13,593 [tornado.access.INFO] 302 GET / (45.15.18.72) 0.65ms
+2024-05-30 22:54:14,230 [script_server.audit_utils.WARNING] Could not get hostname for 45.15.18.72
+2024-05-30 22:54:14,231 [identification.INFO] Assigned user_id=45.15.18.72-f252f0e2d4e24405 to {'ip': '45.15.18.72'}
+2024-05-30 22:54:14,240 [tornado.access.INFO] 200 GET /index.html (45.15.18.72) 87.95ms
+2024-05-30 22:54:15,507 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (45.15.18.72) 148.22ms
+2024-05-30 22:54:15,582 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (45.15.18.72) 257.92ms
+2024-05-30 22:54:16,640 [tornado.access.INFO] 200 GET /executions/active (45.15.18.72) 2.88ms
+2024-05-30 22:54:16,649 [script_server.audit_utils.WARNING] Could not get hostname for 45.15.18.72
+2024-05-30 22:54:16,658 [tornado.access.INFO] 200 GET /scripts (45.15.18.72) 17.17ms
+2024-05-30 22:54:16,659 [tornado.access.INFO] 200 GET /conf (45.15.18.72) 16.91ms
+2024-05-30 22:54:16,662 [script_server.audit_utils.WARNING] Could not get hostname for 45.15.18.72
+2024-05-30 22:54:16,663 [tornado.access.INFO] 200 GET /auth/info (45.15.18.72) 20.11ms
+2024-05-30 22:54:19,091 [tornado.access.INFO] 200 GET /favicon.ico (45.15.18.72) 2.95ms
+2024-05-31 05:40:38,382 [tornado.access.INFO] 302 GET / (198.235.24.139) 153.27ms
+2024-05-31 05:40:38,560 [script_server.audit_utils.WARNING] Could not get hostname for 198.235.24.139
+2024-05-31 05:40:38,562 [identification.INFO] Assigned user_id=198.235.24.139-2bb3785c6bd34478 to {'ip': '198.235.24.139'}
+2024-05-31 05:40:38,661 [tornado.access.INFO] 200 GET /index.html (198.235.24.139) 236.44ms
+2024-05-31 06:28:25,607 [tornado.access.INFO] 200 GET /index.html (213.233.85.186) 41.66ms
+2024-05-31 06:28:25,777 [tornado.access.INFO] 200 GET /css/chunk-index-vendors.f4386b5c.css (213.233.85.186) 36.46ms
+2024-05-31 06:28:25,778 [tornado.access.INFO] 200 GET /theme/theme.css (213.233.85.186) 35.73ms
+2024-05-31 06:28:25,806 [tornado.access.INFO] 200 GET /css/index.aca68371.css (213.233.85.186) 20.98ms
+2024-05-31 06:28:25,908 [tornado.access.INFO] 200 GET /js/index.04d10ae4.js (213.233.85.186) 108.55ms
+2024-05-31 06:28:25,988 [tornado.access.INFO] 200 GET /js/chunk-index-vendors.b3f69aca.js (213.233.85.186) 189.23ms
+2024-05-31 06:28:26,354 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-05-31 06:28:26,378 [tornado.access.INFO] 200 GET /auth/info (213.233.85.186) 128.61ms
+2024-05-31 06:28:26,383 [tornado.access.INFO] 200 GET /conf (213.233.85.186) 3.25ms
+2024-05-31 06:28:26,399 [tornado.access.INFO] 200 GET /executions/active (213.233.85.186) 18.64ms
+2024-05-31 06:28:26,411 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-05-31 06:28:26,474 [tornado.access.INFO] 200 GET /scripts (213.233.85.186) 92.77ms
+2024-05-31 06:28:26,478 [tornado.access.INFO] 304 GET /favicon.ico (213.233.85.186) 2.75ms
+2024-05-31 06:28:26,481 [tornado.access.INFO] 200 GET /img/titleBackground_small.8d99a14e.jpg (213.233.85.186) 4.94ms
+2024-05-31 06:28:26,685 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (213.233.85.186) 19.85ms
+2024-05-31 06:28:26,689 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-05-31 08:48:59,016 [tornado.access.INFO] 302 GET / (147.185.133.125) 0.90ms
+2024-05-31 08:48:59,945 [script_server.audit_utils.WARNING] Could not get hostname for 147.185.133.125
+2024-05-31 08:48:59,946 [identification.INFO] Assigned user_id=147.185.133.125-6cf77946d344412d to {'ip': '147.185.133.125'}
+2024-05-31 08:48:59,949 [tornado.access.INFO] 200 GET /index.html (147.185.133.125) 865.05ms
+2024-05-31 08:54:42,203 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (185.53.197.80) 2.22ms
+2024-05-31 08:54:42,303 [root.WARNING] Parameter Host has invalid value, skipping
+2024-05-31 08:54:42,303 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-05-31 11:34:28,769 [tornado.access.INFO] 302 GET / (35.203.211.111) 0.81ms
+2024-05-31 11:34:28,933 [identification.INFO] Assigned user_id=35.203.211.111-242e33f6e4384f5c to {'ip': '35.203.211.111', 'hostname': '111.211.203.35.bc.googleusercontent.com'}
+2024-05-31 11:34:28,935 [tornado.access.INFO] 200 GET /index.html (35.203.211.111) 138.55ms
+2024-05-31 11:41:32,185 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/b484cfa5de0f/1717066301022
+2024-05-31 11:41:32,192 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/9a4f54514c94/1717067958418
+2024-05-31 12:23:57,681 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (213.233.85.186) 2.40ms
+2024-05-31 12:23:57,850 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-05-31 12:23:57,861 [root.WARNING] Parameter Host has invalid value, skipping
+2024-05-31 12:23:57,861 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-05-31 19:38:01,177 [tornado.general.INFO] Malformed HTTP message from 172.233.57.39: Malformed HTTP request line
+2024-05-31 19:38:01,401 [tornado.access.INFO] 302 GET / (172.233.57.39) 124.17ms
+2024-05-31 19:38:11,335 [tornado.general.WARNING] 403 POST /sdk (172.233.57.39): '_xsrf' argument missing from POST
+2024-05-31 19:38:11,348 [tornado.access.WARNING] 403 POST /sdk (172.233.57.39) 28.20ms
+2024-05-31 19:38:11,483 [identification.INFO] Assigned user_id=172.233.57.39-a2fcf1b5e15e40a3 to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:11,600 [tornado.access.WARNING] 404 GET /nmaplowercheck1717184291 (172.233.57.39) 275.21ms
+2024-05-31 19:38:11,680 [identification.INFO] Assigned user_id=172.233.57.39-66550d10179b4cbb to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:11,685 [tornado.access.WARNING] 404 GET /pools/default/buckets (172.233.57.39) 8.09ms
+2024-05-31 19:38:11,883 [identification.INFO] Assigned user_id=172.233.57.39-306458a2a7764ed0 to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:11,885 [tornado.access.WARNING] 404 GET /HNAP1 (172.233.57.39) 6.12ms
+2024-05-31 19:38:13,396 [tornado.access.INFO] 302 GET / (172.233.57.39) 1.87ms
+2024-05-31 19:38:13,397 [identification.INFO] Assigned user_id=172.233.57.39-a1feb35e876a44e7 to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:13,398 [tornado.access.WARNING] 404 GET /Bp5u (172.233.57.39) 2.03ms
+2024-05-31 19:38:13,553 [identification.INFO] Assigned user_id=172.233.57.39-b64e42aeaeb44d51 to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:13,554 [tornado.access.WARNING] 404 GET /Portal/Portal.mwsl (172.233.57.39) 2.42ms
+2024-05-31 19:38:13,555 [identification.INFO] Assigned user_id=172.233.57.39-0047b677d20640ac to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:13,566 [tornado.access.INFO] 200 GET /index.html (172.233.57.39) 12.40ms
+2024-05-31 19:38:13,765 [tornado.access.INFO] 200 GET /favicon.ico (172.233.57.39) 6.46ms
+2024-05-31 19:38:20,837 [identification.INFO] Assigned user_id=172.233.57.39-009606287f8d4d53 to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:20,839 [tornado.access.WARNING] 404 GET /__Additional (172.233.57.39) 5.31ms
+2024-05-31 19:38:20,886 [tornado.access.INFO] 302 GET / (172.233.57.39) 1.28ms
+2024-05-31 19:38:21,045 [identification.INFO] Assigned user_id=172.233.57.39-009c7af97b32490f to {'ip': '172.233.57.39', 'hostname': '172-233-57-39.ip.linodeusercontent.com'}
+2024-05-31 19:38:21,047 [tornado.access.INFO] 200 GET /index.html (172.233.57.39) 4.70ms
+2024-05-31 19:38:21,613 [tornado.access.INFO] 302 GET / (172.233.57.39) 0.75ms
+2024-05-31 20:24:19,810 [tornado.access.INFO] 304 GET /index.html (86.124.126.93) 9.05ms
+2024-05-31 20:24:20,036 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 1.23ms
+2024-05-31 20:24:20,088 [tornado.access.INFO] 304 GET /css/chunk-index-vendors.f4386b5c.css (86.124.126.93) 2.03ms
+2024-05-31 20:24:20,091 [tornado.access.INFO] 304 GET /css/index.aca68371.css (86.124.126.93) 1.88ms
+2024-05-31 20:24:20,097 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (86.124.126.93) 2.54ms
+2024-05-31 20:24:20,108 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (86.124.126.93) 2.25ms
+2024-05-31 20:24:20,540 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 16.67ms
+2024-05-31 20:24:20,954 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:20,959 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 408.18ms
+2024-05-31 20:24:20,971 [tornado.access.INFO] 304 GET /fonts/roboto-latin-300.ef7c6637.woff2 (86.124.126.93) 8.78ms
+2024-05-31 20:24:21,384 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:21,427 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 463.46ms
+2024-05-31 20:24:21,430 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 466.46ms
+2024-05-31 20:24:21,432 [tornado.access.INFO] 304 GET /img/titleBackground_small.8d99a14e.jpg (86.124.126.93) 468.07ms
+2024-05-31 20:24:21,433 [tornado.access.INFO] 304 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (86.124.126.93) 468.77ms
+2024-05-31 20:24:21,435 [tornado.access.INFO] 304 GET /favicon.ico (86.124.126.93) 1.11ms
+2024-05-31 20:24:34,384 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 30.40ms
+2024-05-31 20:24:35,114 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:38,224 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (86.124.126.93) 2.42ms
+2024-05-31 20:24:38,784 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:38,828 [script_server.process_utils.WARNING] Error output wasn't empty, although the command finished with code 0!
+2024-05-31 20:24:53,259 [tornado.access.INFO] 304 GET /index.html (86.124.126.93) 2.10ms
+2024-05-31 20:24:53,406 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 1.20ms
+2024-05-31 20:24:54,160 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:54,161 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 572.83ms
+2024-05-31 20:24:54,167 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 4.14ms
+2024-05-31 20:24:54,743 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:54,746 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 580.42ms
+2024-05-31 20:24:54,746 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 580.70ms
+2024-05-31 20:24:54,965 [tornado.access.INFO] 101 GET /scripts/List?initWithValues=false (86.124.126.93) 1.92ms
+2024-05-31 20:24:55,284 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:55,302 [script_server.process_utils.WARNING] Error output wasn't empty, although the command finished with code 0!
+2024-05-31 20:24:59,373 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:59,656 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:24:59,702 [script_server.process_utils.WARNING] Error output wasn't empty, although the command finished with code 0!
+2024-05-31 20:24:59,703 [web_server.INFO] Calling script List. User {'ip': '86.124.126.93'}
+2024-05-31 20:24:59,707 [script_server.execution_service.INFO] Calling script #9: /home/opc/zone_gui/conf/runners/list.sh
+2024-05-31 20:24:59,764 [tornado.access.INFO] 200 POST /executions/start (86.124.126.93) 398.35ms
+2024-05-31 20:25:00,096 [tornado.access.INFO] 101 GET /executions/io/9 (86.124.126.93) 1.77ms
+2024-05-31 20:25:00,660 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:00,953 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:01,851 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:01,851 [web_server.INFO] 86.124.126.93 disconnected
+2024-05-31 20:25:02,415 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:02,417 [tornado.access.INFO] 200 POST /executions/cleanup/9 (86.124.126.93) 565.19ms
+2024-05-31 20:25:07,430 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 1.62ms
+2024-05-31 20:25:07,995 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:23,165 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:23,730 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:23,732 [web_server.INFO] Calling script Add. User {'ip': '86.124.126.93'}
+2024-05-31 20:25:23,732 [script_server.execution_service.INFO] Calling script #10: /home/opc/zone_gui/conf/runners/add.sh a 1.1.1.1
+2024-05-31 20:25:23,741 [tornado.access.INFO] 200 POST /executions/start (86.124.126.93) 1150.00ms
+2024-05-31 20:25:23,965 [tornado.access.INFO] 101 GET /executions/io/10 (86.124.126.93) 0.98ms
+2024-05-31 20:25:24,529 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:25,079 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:25,780 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:25,780 [web_server.INFO] 86.124.126.93 disconnected
+2024-05-31 20:25:26,336 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:25:26,337 [tornado.access.INFO] 200 POST /executions/cleanup/10 (86.124.126.93) 556.58ms
+2024-05-31 20:38:10,846 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 1.15ms
+2024-05-31 20:38:11,407 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-05-31 20:49:16,390 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 0.97ms
+2024-05-31 20:49:16,952 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 02:09:43,453 [tornado.access.INFO] 302 GET / (205.210.31.182) 13.47ms
+2024-06-01 02:09:43,897 [script_server.audit_utils.WARNING] Could not get hostname for 205.210.31.182
+2024-06-01 02:09:43,898 [identification.INFO] Assigned user_id=205.210.31.182-7aecea09700a41f7 to {'ip': '205.210.31.182'}
+2024-06-01 02:09:43,906 [tornado.access.INFO] 200 GET /index.html (205.210.31.182) 41.41ms
+2024-06-01 02:31:11,959 [tornado.access.INFO] 302 GET / (205.210.31.16) 0.87ms
+2024-06-01 02:31:12,268 [script_server.audit_utils.WARNING] Could not get hostname for 205.210.31.16
+2024-06-01 02:31:12,269 [identification.INFO] Assigned user_id=205.210.31.16-cfd6edcdfcaf4876 to {'ip': '205.210.31.16'}
+2024-06-01 02:31:12,270 [tornado.access.INFO] 200 GET /index.html (205.210.31.16) 68.10ms
+2024-06-01 05:40:43,717 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 11.13ms
+2024-06-01 05:40:44,282 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 06:47:49,013 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (213.233.85.186) 2.99ms
+2024-06-01 06:47:49,100 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 06:47:49,611 [root.WARNING] Parameter Host has invalid value, skipping
+2024-06-01 06:47:49,611 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-06-01 07:46:47,261 [tornado.access.INFO] 302 GET / (162.216.149.163) 0.95ms
+2024-06-01 07:46:47,497 [identification.INFO] Assigned user_id=162.216.149.163-1d32f9b8b7ce4aac to {'ip': '162.216.149.163', 'hostname': '163.149.216.162.bc.googleusercontent.com'}
+2024-06-01 07:46:47,500 [tornado.access.INFO] 200 GET /index.html (162.216.149.163) 25.40ms
+2024-06-01 07:49:54,459 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 2.84ms
+2024-06-01 07:49:54,464 [tornado.access.INFO] 304 GET /css/chunk-index-vendors.f4386b5c.css (86.124.126.93) 3.72ms
+2024-06-01 07:49:54,469 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (86.124.126.93) 2.57ms
+2024-06-01 07:49:54,470 [tornado.access.INFO] 304 GET /css/index.aca68371.css (86.124.126.93) 2.94ms
+2024-06-01 07:49:54,473 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (86.124.126.93) 1.21ms
+2024-06-01 07:49:55,494 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 07:49:55,494 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 560.64ms
+2024-06-01 07:49:55,504 [tornado.access.INFO] 304 GET /fonts/MaterialIcons-Regular.570eb838.woff2 (86.124.126.93) 6.36ms
+2024-06-01 07:49:55,505 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 6.49ms
+2024-06-01 07:49:55,505 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 5.22ms
+2024-06-01 07:49:56,081 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 07:49:56,084 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 583.24ms
+2024-06-01 07:49:56,085 [tornado.access.INFO] 304 GET /img/titleBackground_small.8d99a14e.jpg (86.124.126.93) 584.34ms
+2024-06-01 07:49:56,090 [tornado.access.INFO] 304 GET /favicon.ico (86.124.126.93) 3.66ms
+2024-06-01 07:49:56,091 [tornado.access.INFO] 304 GET /fonts/roboto-latin-300.ef7c6637.woff2 (86.124.126.93) 1.32ms
+2024-06-01 07:49:56,647 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 1.52ms
+2024-06-01 07:49:57,206 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:48,731 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:49,298 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:49,303 [web_server.INFO] Calling script Add. User {'ip': '86.124.126.93'}
+2024-06-01 08:03:49,305 [script_server.execution_service.INFO] Calling script #11: /home/opc/zone_gui/conf/runners/add.sh a.com 1.1.1.1
+2024-06-01 08:03:49,331 [tornado.access.INFO] 200 POST /executions/start (86.124.126.93) 1159.26ms
+2024-06-01 08:03:51,463 [tornado.access.INFO] 101 GET /executions/io/11 (86.124.126.93) 0.97ms
+2024-06-01 08:03:52,020 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:52,561 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:52,566 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (86.124.126.93) 0.89ms
+2024-06-01 08:03:53,134 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:53,700 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:53,700 [web_server.INFO] 86.124.126.93 disconnected
+2024-06-01 08:03:54,274 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:03:54,276 [tornado.access.INFO] 200 POST /executions/cleanup/11 (86.124.126.93) 573.97ms
+2024-06-01 08:09:46,236 [tornado.access.INFO] 304 GET /index.html (86.124.126.93) 1.82ms
+2024-06-01 08:09:46,689 [tornado.access.INFO] 200 GET /theme/theme.css (86.124.126.93) 0.71ms
+2024-06-01 08:09:47,764 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:09:47,765 [tornado.access.INFO] 304 GET /auth/info (86.124.126.93) 556.77ms
+2024-06-01 08:09:47,774 [tornado.access.INFO] 304 GET /conf (86.124.126.93) 8.45ms
+2024-06-01 08:09:48,331 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 08:09:48,335 [tornado.access.INFO] 304 GET /scripts (86.124.126.93) 564.56ms
+2024-06-01 08:09:48,335 [tornado.access.INFO] 304 GET /executions/active (86.124.126.93) 562.53ms
+2024-06-01 08:09:48,831 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (86.124.126.93) 2.26ms
+2024-06-01 08:09:49,401 [script_server.audit_utils.WARNING] Could not get hostname for 86.124.126.93
+2024-06-01 10:26:28,564 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (213.233.85.186) 1.07ms
+2024-06-01 10:26:29,189 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 10:26:29,196 [root.WARNING] Parameter Host has invalid value, skipping
+2024-06-01 10:26:29,196 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-06-01 10:47:31,870 [tornado.access.INFO] 304 GET /index.html (213.233.85.186) 2.32ms
+2024-06-01 10:47:32,816 [tornado.access.INFO] 200 GET /theme/theme.css (213.233.85.186) 0.65ms
+2024-06-01 10:47:32,820 [tornado.access.INFO] 304 GET /css/chunk-index-vendors.f4386b5c.css (213.233.85.186) 1.38ms
+2024-06-01 10:47:32,882 [tornado.access.INFO] 304 GET /js/chunk-index-vendors.b3f69aca.js (213.233.85.186) 4.98ms
+2024-06-01 10:47:32,885 [tornado.access.INFO] 304 GET /css/index.aca68371.css (213.233.85.186) 7.02ms
+2024-06-01 10:47:32,886 [tornado.access.INFO] 304 GET /js/index.04d10ae4.js (213.233.85.186) 6.12ms
+2024-06-01 10:47:33,099 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 10:47:33,102 [tornado.access.INFO] 304 GET /scripts (213.233.85.186) 65.66ms
+2024-06-01 10:47:33,104 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 10:47:33,104 [tornado.access.INFO] 304 GET /auth/info (213.233.85.186) 2.50ms
+2024-06-01 10:47:33,105 [tornado.access.INFO] 304 GET /conf (213.233.85.186) 2.72ms
+2024-06-01 10:47:33,106 [tornado.access.INFO] 304 GET /executions/active (213.233.85.186) 2.92ms
+2024-06-01 10:47:33,107 [tornado.access.INFO] 304 GET /img/titleBackground_small.8d99a14e.jpg (213.233.85.186) 1.63ms
+2024-06-01 10:47:33,109 [tornado.access.INFO] 304 GET /favicon.ico (213.233.85.186) 1.21ms
+2024-06-01 10:47:33,245 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=false (213.233.85.186) 0.80ms
+2024-06-01 10:47:33,246 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 11:00:34,986 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (213.233.85.186) 2.42ms
+2024-06-01 11:00:34,989 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 11:00:35,050 [root.WARNING] Parameter Host has invalid value, skipping
+2024-06-01 11:00:35,050 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-06-01 11:06:05,488 [tornado.access.INFO] 101 GET /scripts/Add?initWithValues=true (213.233.85.186) 1.04ms
+2024-06-01 11:06:05,545 [script_server.audit_utils.WARNING] Could not get hostname for 213.233.85.186
+2024-06-01 11:06:05,930 [root.WARNING] Parameter Host has invalid value, skipping
+2024-06-01 11:06:05,930 [root.WARNING] Parameter IP address has invalid value, skipping
+2024-06-01 11:45:09,466 [tornado.general.INFO] Malformed HTTP message from 209.38.236.211: Malformed HTTP request line
+2024-06-01 11:45:09,472 [tornado.access.INFO] 302 GET / (209.38.236.211) 0.99ms
+2024-06-01 11:45:09,734 [tornado.access.INFO] 302 GET / (167.172.165.223) 0.64ms
+2024-06-01 11:45:09,777 [script_server.audit_utils.WARNING] Could not get hostname for 167.172.165.223
+2024-06-01 11:45:09,777 [identification.INFO] Assigned user_id=167.172.165.223-a342ea9c22fc4e2f to {'ip': '167.172.165.223'}
+2024-06-01 11:45:09,805 [tornado.access.INFO] 200 GET /index.html (167.172.165.223) 70.21ms
+2024-06-01 11:45:10,572 [tornado.access.INFO] 200 GET /favicon.ico (52.76.71.100) 3.16ms
+2024-06-01 19:02:14,230 [tornado.access.INFO] 302 GET / (205.210.31.202) 36.99ms
+2024-06-01 19:02:14,815 [script_server.audit_utils.WARNING] Could not get hostname for 205.210.31.202
+2024-06-01 19:02:14,815 [identification.INFO] Assigned user_id=205.210.31.202-23003d9fc2c64361 to {'ip': '205.210.31.202'}
+2024-06-01 19:02:14,821 [tornado.access.INFO] 200 GET /index.html (205.210.31.202) 177.09ms
+2024-06-01 20:49:10,479 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/b484cfa5de0f/1717187099376
+2024-06-01 20:49:10,489 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/b484cfa5de0f/1717187123166
+2024-06-01 21:03:19,212 [tornado.access.INFO] 302 GET / (35.203.210.53) 0.83ms
+2024-06-01 21:03:19,296 [identification.INFO] Assigned user_id=35.203.210.53-c19b9f3017cd45a1 to {'ip': '35.203.210.53', 'hostname': '53.210.203.35.bc.googleusercontent.com'}
+2024-06-01 21:03:19,297 [tornado.access.INFO] 200 GET /index.html (35.203.210.53) 61.46ms
+2024-06-01 23:58:42,875 [tornado.access.INFO] 302 GET / (198.235.24.153) 1.89ms
+2024-06-01 23:58:42,958 [script_server.audit_utils.WARNING] Could not get hostname for 198.235.24.153
+2024-06-01 23:58:42,958 [identification.INFO] Assigned user_id=198.235.24.153-6d89d5d03fb549a2 to {'ip': '198.235.24.153'}
+2024-06-01 23:58:42,960 [tornado.access.INFO] 200 GET /index.html (198.235.24.153) 54.15ms
+2024-06-02 02:38:23,172 [tornado.access.INFO] 302 GET / (178.32.197.88) 2.44ms
+2024-06-02 04:20:58,355 [identification.INFO] Assigned user_id=37.187.215.244-c57831a5b23f49ab to {'ip': '37.187.215.244', 'hostname': 'head.probe.onyphe.net'}
+2024-06-02 04:20:58,361 [tornado.access.INFO] 200 GET /index.html (37.187.215.244) 153.27ms
+2024-06-02 04:23:21,006 [tornado.access.INFO] 200 GET /favicon.ico (5.196.102.64) 5.87ms
+2024-06-02 06:25:29,098 [script_server.audit_utils.WARNING] Could not get hostname for 178.128.197.147
+2024-06-02 06:25:29,099 [identification.INFO] Assigned user_id=178.128.197.147-c4e76587d3fe43e2 to {'ip': '178.128.197.147'}
+2024-06-02 06:25:29,105 [tornado.access.WARNING] 404 GET /cgi-bin/authLogin.cgi (178.128.197.147) 140.43ms
+2024-06-02 06:41:38,975 [tornado.access.INFO] 302 GET / (60.13.6.30) 0.86ms
+2024-06-02 06:41:48,052 [tornado.access.INFO] 302 GET / (183.93.80.188) 0.71ms
+2024-06-02 06:41:49,505 [script_server.audit_utils.WARNING] Could not get hostname for 114.221.239.239
+2024-06-02 06:41:49,506 [identification.INFO] Assigned user_id=114.221.239.239-bfb7a9e4148c4974 to {'ip': '114.221.239.239'}
+2024-06-02 06:41:49,508 [tornado.access.INFO] 200 GET /index.html (114.221.239.239) 883.29ms
+2024-06-02 06:41:50,129 [tornado.access.INFO] 200 GET /favicon.ico (42.92.120.142) 2.26ms
+2024-06-02 08:20:22,544 [script_server.user_file_storage.INFO] Cleaning old folder: temp/uploadFiles/b484cfa5de0f/1717229028733
+2024-06-02 12:36:27,097 [script_server.audit_utils.WARNING] Could not get hostname for 167.172.165.223
+2024-06-02 12:36:27,097 [identification.INFO] Assigned user_id=167.172.165.223-5bbebab9392d431e to {'ip': '167.172.165.223'}
+2024-06-02 12:36:27,102 [tornado.access.WARNING] 404 GET /query?q=SHOW+DIAGNOSTICS (167.172.165.223) 36.46ms
+2024-06-02 13:12:33,278 [script_server.audit_utils.WARNING] Could not get hostname for 207.154.255.12
+2024-06-02 13:12:33,278 [identification.INFO] Assigned user_id=207.154.255.12-a3641b8e61a9471e to {'ip': '207.154.255.12'}
+2024-06-02 13:12:33,281 [tornado.access.WARNING] 404 GET /v2/_catalog (207.154.255.12) 297.03ms

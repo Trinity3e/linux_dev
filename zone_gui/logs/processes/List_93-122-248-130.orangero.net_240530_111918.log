@@ -1,0 +1,12 @@
+id:8
+user_name:93-122-248-130.orangero.net
+user_id:93.122.248.130-a2ce77466a4f4734
+script:List
+start_time:1717067958454
+command:/home/opc/zone_gui/conf/runners/list.sh Exemplu 1,Exemplu 2,Exemplu 3
+output_format:terminal
+exit_code:0
+>>>>>  OUTPUT STARTED <<<<<
+Exemplu 1
+Exemplu 2
+Exemplu 3
