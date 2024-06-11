@@ -1,5 +1,5 @@
 #! /bin/bash
-while [[ -f hosts.txt ]]; do cat hosts.txt | while read -r h; do
+while [[ -f hosts.txt ]]; do date '+%a %H:%M:%S'; grep -v '^#' hosts.txt | while read -r h; do
 status=$(curl --retry 2 --retry-delay 3 -s -L --output /tmp/title --write-out "%{http_code}" "$h" | head -n1 | tr -dc '0-9')
 [[ $status -gt 400 ]] && status=$(curl --retry 2 --retry-delay 3 -A 'Mozilla/5.0' -s -L --output /tmp/title --write-out "%{http_code}" "$h" | head -n1 | tr -dc '0-9')
 shortlink=$(tail -c20 <<<"$h")
