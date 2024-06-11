@@ -1,0 +1,16 @@
+{
+  "name": "List/remove ns3",
+  "script_path": "conf/runners/list_ns3.sh",
+  "description": "Zone listing",
+  "parameters": [
+    {
+      "name": "Select to remove",
+      "type": "multiselect",
+      "values": {
+        "script": "conf/runners/list_ns3.sh",
+        "shell": false
+      },
+      "pass_as": "argument"
+    }
+  ]
+}
