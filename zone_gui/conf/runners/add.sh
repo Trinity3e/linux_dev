@@ -19,14 +19,16 @@ zonefile="
               86400     ; Retry
             2419200     ; Expire
              604800 )   ; Negative Cache TTL
-
+;
 ; name servers - NS records
      IN      NS      ns1.cgii.ro.
      IN      NS      ns2.cgii.ro.
+     IN      NS      ns3.cgii.ro.
 
 ; name servers - A records
 ns1.cgii.ro.          IN      A       150.230.151.113
 ns2.cgii.ro.          IN      A       144.24.183.194
+ns3.cgii.ro           IN      A       138.2.138.5
 
 www.$link.            IN      A      $2
 $link.                IN      A      $2"
@@ -43,13 +45,13 @@ mastercfg="
 zone \"$link\" {
     type master;
     file \"$link.zone\";
-    allow-transfer { 144.24.183.194; };
+    allow-transfer { 144.24.183.194; 138.2.138.5; };
 };
 "
 
 slavecfg="
 zone \"$link\" {
-    type master;
+    type slave;
     file \"$link.zone\";
     masters { 150.230.151.113; };
 };
@@ -57,10 +59,13 @@ zone \"$link\" {
 
 echo "
 zone file:
+###########################
 
 
 $zonefile
 
+
+###########################
 
 master:
 
@@ -70,3 +75,19 @@ slave:
 
 $slavecfg
 "
+
+echo "$zonefile" > /tmp/"$link".zone
+echo "$mastercfg" > /tmp/zonetoadd_ma
+echo "$slavecfg"  > /tmp/zonetoadd_sl
+
+echo -n "put /tmp/zonetoadd_ma" | sftp -i $HOME/ns1.key opc@ns1.cgii.ro:/tmp
+ssh -i $HOME/ns1.key opc@ns1.cgii.ro -t 'sh -c "cat /tmp/zonetoadd_ma | sudo tee -a /etc/named.conf && rm /tmp/zonetoadd_ma"' 2>/dev/null
+echo -n "put /tmp/"$link".zone" | sftp -i $HOME/ns1.key opc@ns1.cgii.ro:/tmp
+ssh -i $HOME/ns1.key opc@ns1.cgii.ro -t 'sh -c "sudo mv -vf /tmp/*.zone /var/named; sudo systemctl restart named"' 2>/dev/null
+
+
+echo -n "put /tmp/zonetoadd_sl" | sftp -i $HOME/ns2.key opc@ns2.cgii.ro:/tmp
+ssh -i $HOME/ns2.key opc@ns2.cgii.ro -t 'sh -c "cat /tmp/zonetoadd_sl | sudo tee -a /etc/named.conf && rm /tmp/zonetoadd_sl"' 2>/dev/null
+echo -n "put /tmp/"$link".zone" | sftp -i $HOME/ns2.key opc@ns2.cgii.ro:/tmp
+ssh -i $HOME/ns2.key opc@ns2.cgii.ro -t 'sh -c "sudo mv -vf /tmp/*.zone /var/named; sudo systemctl restart named"' 2>/dev/null
+

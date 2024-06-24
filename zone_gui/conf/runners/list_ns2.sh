@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z $1 ]]; then
-ssh -i $HOME/ns2.cgii.ro.key opc@ns2.cgii.ro -t "sh -c 'sudo find /var/named -name '*.zone' | xargs basename -s .zone'" 2>/dev/null
+ssh -i $HOME/ns2.key opc@ns2.cgii.ro -t "sh -c 'sudo find /var/named -name '*.zone' | xargs basename -s .zone'" 2>/dev/null
 #grep -o 'file.*\.zone' /etc/named.conf | cut -d'"' -f2 | sed 's/.zone//g'
 
 else
