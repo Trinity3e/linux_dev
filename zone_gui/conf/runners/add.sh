@@ -13,7 +13,7 @@ link=$1
 
 zonefile="
 \$TTL    604800
-@       IN      SOA     ns1.cgii.ro. (
+@       IN      SOA     $link. (
                   3     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -23,12 +23,10 @@ zonefile="
 ; name servers - NS records
      IN      NS      ns1.cgii.ro.
      IN      NS      ns2.cgii.ro.
-     IN      NS      ns3.cgii.ro.
 
 ; name servers - A records
 ns1.cgii.ro.          IN      A       150.230.151.113
 ns2.cgii.ro.          IN      A       144.24.183.194
-ns3.cgii.ro           IN      A       138.2.138.5
 
 www.$link.            IN      A      $2
 $link.                IN      A      $2"
@@ -45,7 +43,7 @@ mastercfg="
 zone \"$link\" {
     type master;
     file \"$link.zone\";
-    allow-transfer { 144.24.183.194; 138.2.138.5; };
+    allow-transfer { 144.24.183.194; };
 };
 "
 
@@ -57,24 +55,12 @@ zone \"$link\" {
 };
 "
 
-echo "
-zone file:
+echo "zone file:
 ###########################
-
 
 $zonefile
 
-
-###########################
-
-master:
-
-$mastercfg
-
-slave:
-
-$slavecfg
-"
+###########################"
 
 echo "$zonefile" > /tmp/"$link".zone
 echo "$mastercfg" > /tmp/zonetoadd_ma
